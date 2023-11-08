@@ -174,7 +174,7 @@ function select_prompt(cb)
     for key, _ in pairs(M.prompts) do table.insert(promptKeys, key) end
     table.sort(promptKeys)
     vim.ui.select(promptKeys, {
-        prompt = '>>>',
+        prompt = 'gen.nvim',
         format_item = function(item)
             return table.concat(vim.split(item, '_'), ' ')
         end
