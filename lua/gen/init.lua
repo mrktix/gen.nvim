@@ -113,6 +113,7 @@ M.exec = function(options)
     local cmd = opts.command
     cmd = string.gsub(cmd, "%$prompt", prompt)
     cmd = string.gsub(cmd, "%$model", opts.model)
+    cmd = string.gsub(cmd, "%$file", vim.cmd("file"))
     if result_buffer then vim.cmd('bd' .. result_buffer) end
     local win_opts = vim.tbl_deep_extend('force', get_window_options(),
                                          opts.win_config)
@@ -173,7 +174,7 @@ function select_prompt(cb)
     for key, _ in pairs(M.prompts) do table.insert(promptKeys, key) end
     table.sort(promptKeys)
     vim.ui.select(promptKeys, {
-        prompt = 'Prompt:',
+        prompt = '>>>',
         format_item = function(item)
             return table.concat(vim.split(item, '_'), ' ')
         end
