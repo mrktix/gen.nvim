@@ -21,18 +21,20 @@ end
 
 local function get_window_options()
 
-    local width = math.floor(vim.o.columns * 0.8) -- 90% of the current editor's width
-    local height = math.floor(vim.o.lines * 0.9)
-    local row = math.floor((vim.o.lines - height) / 2)
-    local col = math.floor((vim.o.columns - width) / 2)
+    -- local width = math.floor(vim.o.columns * 0.9) -- 90% of the current editor's width
+    -- local height = math.floor(vim.o.lines * 0.9)
+
+    -- local row = math.floor((vim.o.lines - height) / 2)
+    -- local col = math.floor((vim.o.columns - width) / 2)
 
     local cursor = vim.api.nvim_win_get_cursor(0)
-    local new_win_width = vim.api.nvim_win_get_width(0)
+    local win_width = vim.api.nvim_win_get_width(0)
     local win_height = vim.api.nvim_win_get_height(0)
 
-    local middle_row = win_height / 2
+    local new_win_height = math.floor(win_height * 0.8)
+    local new_win_width = math.floor(win_width * 0.8)
 
-    local new_win_height = math.floor(win_height / 2)
+    local middle_row = win_height / 2
     local new_win_row
     if cursor[1] <= middle_row then
         new_win_row = 5
