@@ -49,7 +49,7 @@ local function get_window_options()
         row = new_win_row,
         col = 0,
         style = 'minimal',
-        border = 'single'
+        border = 'shadow'
     }
 end
 
