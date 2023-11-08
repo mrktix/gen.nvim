@@ -113,7 +113,7 @@ M.exec = function(options)
     local cmd = opts.command
     cmd = string.gsub(cmd, "%$prompt", prompt)
     cmd = string.gsub(cmd, "%$model", opts.model)
-    cmd = string.gsub(cmd, "%$file", vim.cmd("file"))
+    cmd = string.gsub(cmd, "%$file", vim.fn.expand('%:p'))
     if result_buffer then vim.cmd('bd' .. result_buffer) end
     local win_opts = vim.tbl_deep_extend('force', get_window_options(),
                                          opts.win_config)
