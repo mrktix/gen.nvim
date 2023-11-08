@@ -49,7 +49,12 @@ local function get_window_options()
         row = new_win_row,
         col = 0,
         style = 'minimal',
-        border = 'rounded'
+        border = 'rounded',
+        winblend = 0,
+        highlights = {
+            border = "Normal",
+            backgroud = "Normal",
+        }
     }
 end
 
