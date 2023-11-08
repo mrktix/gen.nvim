@@ -48,8 +48,8 @@ local function get_window_options()
         height = new_win_height,
         row = new_win_row,
         col = 0,
-        style = 'minimal',
-        border = 'shadow'
+        style = 'transparent',
+        border = 'double'
     }
 end
 
