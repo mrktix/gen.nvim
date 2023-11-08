@@ -122,7 +122,7 @@ M.exec = function(options)
     result_buffer = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_option(result_buffer, 'filetype', 'markdown')
 
-    local float_win = vim.api.nvim_open_win(result_buffer, true, win_opts)
+    local float_win = vim.api.nvim_open_win(result_buffer, true, get_window_options())
     vim.api.nvim_win_set_option(float_win, 'wrap', true)
 
     local result_string = ''
