@@ -48,8 +48,8 @@ local function get_window_options()
         height = new_win_height,
         row = new_win_row,
         col = 0,
-        style = 'transparent',
-        border = 'double'
+        style = 'minimal',
+        border = 'rounded'
     }
 end
 
@@ -122,7 +122,7 @@ M.exec = function(options)
     result_buffer = vim.api.nvim_create_buf(false, true)
     vim.api.nvim_buf_set_option(result_buffer, 'filetype', 'markdown')
 
-    local float_win = vim.api.nvim_open_win(result_buffer, true, get_window_options())
+    local float_win = vim.api.nvim_open_win(result_buffer, true, win_opts)
     vim.api.nvim_win_set_option(float_win, 'wrap', true)
 
     local result_string = ''
