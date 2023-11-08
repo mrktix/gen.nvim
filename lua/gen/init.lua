@@ -21,7 +21,7 @@ end
 
 local function get_window_options()
 
-    local width = math.floor(vim.o.columns * 0.9) -- 90% of the current editor's width
+    local width = math.floor(vim.o.columns * 0.8) -- 90% of the current editor's width
     local height = math.floor(vim.o.lines * 0.9)
     local row = math.floor((vim.o.lines - height) / 2)
     local col = math.floor((vim.o.columns - width) / 2)
@@ -120,6 +120,7 @@ M.exec = function(options)
     vim.api.nvim_buf_set_option(result_buffer, 'filetype', 'markdown')
 
     local float_win = vim.api.nvim_open_win(result_buffer, true, win_opts)
+    vim.api.nvim_win_set_option(float_win, 'wrap', true)
 
     local result_string = ''
     local lines = {}
