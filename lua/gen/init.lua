@@ -49,7 +49,8 @@ local function get_window_options()
         row = new_win_row,
         col = 0,
         style = 'minimal',
-        border = 'rounded',
+        border = 'solid',
+        -- border = 'rounded',
     }
 end
 
