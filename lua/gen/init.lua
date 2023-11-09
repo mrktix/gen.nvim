@@ -26,7 +26,7 @@ local function get_window_options()
     local llama_height = math.floor(height * 0.3)
     local llama_width = math.floor(width - 2)
 
-    local llama_row = height-llama_height-4
+    local llama_row = height-llama_height-6
 
     return {
         relative = 'cursor',
