@@ -35,7 +35,7 @@ local function get_window_options()
         row = llama_row,
         col = 0,
         style = 'minimal',
-        border = 'solid',
+        border = {">", "-", "<", "", "", "", "", ""}
         -- single, solid
     }
 end
