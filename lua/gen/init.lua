@@ -24,9 +24,9 @@ local function get_window_options()
     local height = vim.api.nvim_get_option('lines')
 
     local llama_height = math.floor(height * 0.3)
-    local llama_width = math.floor(width - 5)
+    local llama_width = math.floor(width - 2)
 
-    local llama_row = height-llama_height-3
+    local llama_row = height-llama_height-4
 
     return {
         relative = 'cursor',
@@ -35,7 +35,7 @@ local function get_window_options()
         row = llama_row,
         col = 0,
         style = 'minimal',
-        border = {">", "-", "<", "", "", "", "", ""}
+        border = {">", " ", "<", "", "", "", "", ""}
         -- single, solid
     }
 end
