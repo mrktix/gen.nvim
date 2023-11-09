@@ -20,19 +20,19 @@ local function trim_table(tbl)
 end
 
 local function get_window_options()
-    local win_width = vim.api.nvim_win_get_width(0)
-    local win_height = vim.api.nvim_win_get_height(0)
+    local width = vim.api.nvim_get_option('columns')
+    local height = vim.api.nvim_get_option('rows')
 
-    local new_win_height = math.floor(win_height * 0.3)
-    local new_win_width = math.floor(win_width-2)
+    local llama_height = math.floor(height * 0.3)
+    local llama_width = math.floor(width - 2)
 
-    local new_win_row = -new_win_height-2
+    local llama_row = height-llama_height-2
 
     return {
         relative = 'cursor',
-        width = new_win_width,
-        height = new_win_height,
-        row = new_win_row,
+        width = llama_width,
+        height = llama_height,
+        row = llama_row,
         col = 0,
         style = 'minimal',
         border = 'solid',
