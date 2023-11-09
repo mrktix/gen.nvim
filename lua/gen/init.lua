@@ -20,21 +20,13 @@ local function trim_table(tbl)
 end
 
 local function get_window_options()
-
-    local cursor = vim.api.nvim_win_get_cursor(0)
     local win_width = vim.api.nvim_win_get_width(0)
     local win_height = vim.api.nvim_win_get_height(0)
 
-    local new_win_height = math.floor(win_height-1)
+    local new_win_height = math.floor(win_height * 0.3)
     local new_win_width = math.floor(win_width-2)
 
-    local middle_row = win_height / 2
-    local new_win_row
-    if cursor[1] <= middle_row then
-        new_win_row = 5
-    else
-        new_win_row = -5 - new_win_height
-    end
+    local new_win_row = -new_win_height-2
 
     return {
         relative = 'cursor',
@@ -43,7 +35,8 @@ local function get_window_options()
         row = new_win_row,
         col = 0,
         style = 'minimal',
-        border = 'none',
+        border = 'solid',
+        -- single, solid
     }
 end
 
